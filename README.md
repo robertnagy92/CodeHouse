@@ -90,6 +90,7 @@ profilePicture: String
 followers: Array
 follows: Array
 city: String
+posts: ObjectId<Post>
 ```
 
 Post model
@@ -99,7 +100,7 @@ owner: ObjectId<User>
 date: Date
 location: String
 img: String
-likes: Array
+likes: Array 
 ``` 
 
 Message model

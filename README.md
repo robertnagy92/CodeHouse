@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Project Name
+CodeHouse
+## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CodeHouse serve the purpose of connecting web developers all around the world. It's a social network to discuss anything code related, make new friends and chat.
+ 
+## User Stories
 
-## Available Scripts
+- **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault 
+- **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
+- **homepage** - As a user I want to be able to access the homepage so that I see what the app is about and login and signup
+- **sign up** - As a user I want to sign up on the webpage so that I can see all the events that I could attend
+- **login** - As a user I want to be able to log in on the webpage so that I can get back to my account
+- **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
+- **posts list** - As a user I want to see all the posts available so that I can choose which ones I want to comment on and like/dislike
+- **create posts** - As a user I want to create posts so that I can share it with the community
+- **posts comments** - As a user I want to see the comments and likes/dislikes on my posts and on other peoples posts 
+- **adding friends** - As a user I want to be able to add friends and connect with them
+- **chat messaging** - As a user I want to be able to message my friends and get replies 
 
-In the project directory, you can run:
+## Backlog
 
-### `yarn start`
+List of other features outside of the MVPs scope
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User profile:
+- see my profile
+- upload my profile picture
+- see other users profile
+- list of posts created by the user
+- see comments, likes/dislikes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Geo Location:
+- add geolocation to posts when created
 
-### `yarn test`
+Homepage
+- ...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ROUTES:
 
-### `yarn build`
+- GET / 
+  - renders the homepage
+- GET /auth/signup
+  - redirects to / if user logged in
+  - renders the signup form (with flash msg)
+- POST /auth/signup
+  - redirects to / if user logged in
+  - body:
+    - username
+    - email
+    - password
+- GET /auth/login
+  - redirects to / if user logged in
+  - renders the login form (with flash msg)
+- POST /auth/login
+  - redirects to / if user logged in
+  - body:
+    - username
+    - password
+- POST /auth/logout
+  - body: (empty)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- GET /posts
+  - renders all posts list + the create post
+- POST /posts/create 
+  -create a post
+- PUT /posts/:id
+-update a post
+- DELETE /posts/:id
+  -delete a post
+- PUT /posts/:id/like
+  -like a post
+- GET /profile/:username
+  - renders user's all posts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- POST / 
+  - creates message
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- GET /:conversationId
+  - render messages
 
-### `yarn eject`
+## Models
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+User model
+ 
+```
+username: String
+email: String
+password: String
+profilePicture: String
+followers: Array
+follows: Array
+city: String
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Post model
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+owner: ObjectId<User>
+date: Date
+location: String
+img: String
+likes: Array
+``` 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Message model
 
-## Learn More
+```
+conversationId: ObjectId<User>
+sender: String
+text: String
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Links
 
-### Code Splitting
+### Git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The url to your repository and to your deployed project
 
-### Analyzing the Bundle Size
+[Server Repository Link](https://github.com/robertnagy92/CodeHouse-Server)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Client Repository Link](https://github.com/robertnagy92/CodeHouse-Client)
 
-### Making a Progressive Web App
+[Deploy Link](http://heroku.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Slides
 
-### Advanced Configuration
+The url to your presentation slides
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Slides Link](http://slides.com)

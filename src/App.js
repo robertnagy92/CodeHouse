@@ -7,6 +7,7 @@ import axios from 'axios'
 import config from './config'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import NotFound from "./components/NotFound"
 // import Section from './components/Section'
 
 class App extends Component {
@@ -124,6 +125,7 @@ class App extends Component {
             <Route  path="/signup"  render={(routeProps) => {
               return  <SignUp onSubmit={this.handleSignUp} {...routeProps}  />
             }}/>
+            <Route component={NotFound} />
         </Switch>
       </div>
     )

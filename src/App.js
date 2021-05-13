@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+// import "./App.css"
 import MyNav from './components/MyNav'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import config from './config'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+// import Section from './components/Section'
 
 class App extends Component {
 
@@ -14,6 +16,8 @@ class App extends Component {
     error: null,
     fetchingUser: true
   }
+
+
 
   handleSignUp = (e) => {
     e.preventDefault()
@@ -112,7 +116,7 @@ class App extends Component {
     return (
       <div>
         <MyNav onLogout={this.handleLogout} user={user} />
-        <h1>Code House</h1>
+        {/* <Section /> */}
         <Switch>
             <Route  path="/signin"  render={(routeProps) => {
               return  <SignIn error={error} onSignIn={this.handleSignIn}  {...routeProps}  />

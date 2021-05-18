@@ -1,28 +1,18 @@
 import React from  'react'
-import {Navbar, Nav} from  'react-bootstrap'
-import {Link} from  'react-router-dom'
+import {Link} from "react-router-dom"
 
-function MyNav(props) {
-  const { user, onLogout } = props
+export default function MyNav() {
   return (
-    <Navbar  bg="light"  expand="lg">
-      <Navbar.Toggle  aria-controls="basic-navbar-nav"  />
-      <Navbar.Collapse  id="basic-navbar-nav">
-        <Nav  className="mr-auto">
-          
-          {
-            user ? (
-              <button onClick={onLogout} >Logout</button>
-            ) : (
-              <>
-                <Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>
-                <Link  style={{marginLeft: '10px'}}  to="/signup">SignUp</Link>
-              </>
-            )
-          }
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-    )
+      <nav>
+    <div className="nav-wrapper blue-grey">
+      <Link to="/" className="brand-logo left">Code House</Link>
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <li><Link to="/signin">Login</Link></li>
+        <li><Link to="/signup">Register</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/create">+</Link></li>
+      </ul>
+    </div>
+  </nav>
+  )
 }
-export default MyNav

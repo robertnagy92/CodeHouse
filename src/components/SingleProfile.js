@@ -33,7 +33,7 @@ export default function Profile() {
             }}>
                 <div>
                     <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
-                    src={profile.user.image}
+                    src={profile.user.profilePicture} alt="img1"
                     />
                 </div>
                 <div>

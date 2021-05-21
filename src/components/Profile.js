@@ -1,6 +1,6 @@
 import React,{useContext, useEffect, useState} from 'react'
 import {UserContext} from "../App"
-import goat from "../images/goat.png"
+
 
 export default function Profile() {
   const [myPictures, setPictures] = useState([])
@@ -31,7 +31,7 @@ export default function Profile() {
           }}>
               <div>
                   <img style={{width:"160px",height:"160px",borderRadius:"80px", boxShadow:"2px 2px black"}}
-                  src={goat} alt="img"
+                  src={state ? state.profilePicture : "loading"} alt="img"
                   />
                 
               </div>

@@ -5,6 +5,7 @@ import goat from "../images/goat.png"
 export default function Profile() {
   const [myPictures, setPictures] = useState([])
   const {state,dispatch} = useContext(UserContext)
+  // const [image, setImage] = useState('')
  useEffect(() => {
    fetch('http://localhost:5005/myposts',{
      headers:{
@@ -29,15 +30,15 @@ export default function Profile() {
              
           }}>
               <div>
-                  <img style={{width:"160px",height:"160px",borderRadius:"80px"}}
+                  <img style={{width:"160px",height:"160px",borderRadius:"80px", boxShadow:"2px 2px black"}}
                   src={goat} alt="img"
                   />
                 
               </div>
-              <div>
+              <div className="profileText">
                   <h4>{state?state.username:"loading"}</h4>
                   <h5>{state?state.email:"loading"}</h5>
-                  <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
+                  <div style={{width:"100%"}}>
                        <h6>{myPictures.length} posts</h6>
                    </div>
               </div>

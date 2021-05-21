@@ -7,8 +7,7 @@ class NotFound extends Component {
   render() {
     return (
       <div>
-          <h2>Developers are lazy!!!</h2>
-          <LottieControl animation={data} width={700} height={500} />
+          <LottieControl animation={data} style={{backgroundSize: "cover"}} width={600} />
       </div>
     )
   }

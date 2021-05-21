@@ -4,6 +4,7 @@ import "./App.css"
 import {Switch, Route, useHistory} from "react-router-dom"
 import Home from "./components/Home"
 import Profile from "./components/Profile"
+import SingleProfile from "./components/SingleProfile"
 import SignUp from "./components/SignUp"
 import Login from "./components/Login"
 import Post from "./components/Post"
@@ -29,7 +30,8 @@ const Routing = ()=>{
    <Route exact path="/" ><Home/> </Route>
    <Route path="/signin" ><Login/> </Route>
    <Route path="/signup" ><SignUp/> </Route>
-   <Route path="/profile" ><Profile/> </Route>
+   <Route exact path="/profile" ><Profile/> </Route>
+   <Route path="/profile/:userId"><SingleProfile/></Route>
    <Route path="/create" ><Post/> </Route>
    <Route component={NotFound} />
    </Switch>

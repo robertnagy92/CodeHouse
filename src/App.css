@@ -2,6 +2,26 @@
 * {
   font-family: Oxygen;
 }
+body {
+	background: linear-gradient(-45deg, #4b4b4b, #b4b4b4, #000000, #c7cdf7);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.profileText {
+  color: white;
+}
 .logincard {
   margin-top: 8rem;
 }
@@ -44,4 +64,7 @@
 }
 .material-icons:hover{
   cursor: pointer;
+}
+.commentColor {
+ color: black;
 }

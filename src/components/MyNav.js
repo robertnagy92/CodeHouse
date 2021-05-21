@@ -11,7 +11,7 @@ export default function MyNav() {
       return [
         <React.Fragment>
 
-        <li><Link to="/create"><i class="material-icons">note_add</i></Link></li>
+        <li><Link to="/create"><i className="material-icons">note_add</i></Link></li>
         <li><Link to="/profile">Profile</Link></li>
         <li><button className="btn waves-effect waves-light btn-small #b71c1c red darken-4" onClick={() => {
           localStorage.clear() //clear localstorage and dispatch CLEAR action
@@ -34,8 +34,8 @@ export default function MyNav() {
 
   return (
       <nav>
-    <div className="nav-wrapper blue">
-      <Link to={state ? "/" : "/signin"} className="brand-logo left" style={{fontSize:"15px"}}><i class="material-icons">cloud</i>Home</Link>
+    <div className="nav-wrapper #01579b light-blue darken-4">
+      <Link to={state ? "/" : "/signin"} className="brand-logo left" style={{fontSize:"15px"}}><i className="material-icons">cloud</i>Home</Link>
       <ul id="nav-mobile" className="right">
         {renderData()}
       </ul>
